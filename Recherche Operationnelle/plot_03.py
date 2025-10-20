@@ -1,14 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x_1 = np.linspace(0, 1200, 400)
+x_1 = np.linspace(0, 1000, 400)
 c_1 = (9900 - 11 * x_1) / 9
 c_2 = (8400 - 7 * x_1) / 12
 c_3 = (9600 - 6 * x_1) / 16
 
-x1_points = [0, 480, 14400/23]
-x2_points = [600, 420, 7700/23]
-x_1_x_2_labels = ['(0,600)', '(480, 420)', r'($\frac{14400}{23}$, $\frac{7700}{23}$)']
+x1_points = [0, 0, 480, 14400/23, 900]
+x2_points = [0, 600, 420, 7700/23, 0]
+x_1_x_2_labels = ['(0,0)', '(0,600)', '(480, 420)', r'($\frac{14400}{23}$, $\frac{7700}{23}$)', '(900,0)']
 
 plt.plot(x_1, c_1, label=r'$11x_1 + 9x_2 \leq 9900$', color='purple')
 plt.plot(x_1, c_2, label=r'$7x_1 + 12x_2 \leq 8400$', color='#BC8F8F')
@@ -26,8 +26,8 @@ for i, txt in enumerate(x_1_x_2_labels):
                  xytext=(30, 10), 
                  ha='center', zorder=4) 
 
-plt.xlim(0, 1200)
-plt.ylim(0, 1200)
+plt.xlim(0, 1000)
+plt.ylim(0, 900)
 plt.xlabel('$x_1$')
 plt.ylabel('$x_2$')
 plt.legend(loc='upper right', facecolor='#FAFAFA')
