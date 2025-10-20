@@ -8,7 +8,7 @@ c_3 = 150 - x_1
 
 x1_points = [0, 90, 90, 70, 40, 0]
 x2_points = [0, 0, 40, 80, 110, 120]
-labels = ['(0,0)', '(90,0)', '(90,40)', '(70,80)', '(40,110)', '(0,120)']
+x_1_x_2_labels = ['(0,0)', '(90,0)', '(90,40)', '(70,80)', '(40,110)', '(0,120)']
 
 plt.plot(x_1, c_1, label=r'$x_1 + 4x_2 \leq 480$', color='purple')
 plt.plot(x_1, c_2, label=r'$4x_1 + 2x_2 \leq 440$', color='#BC8F8F')
@@ -20,7 +20,7 @@ plt.fill_between(x_1, 0, c_feasible, where=(x_1 <= 90), color='lavender', alpha=
 plt.scatter(x1_points, x2_points, color='#C43B7B', s=20, zorder=3)
 plt.scatter(40, 110, color='#C43B7B', s=120, marker='*', label='Solution Optimale', zorder=3)
 
-for i, txt in enumerate(labels):
+for i, txt in enumerate(x_1_x_2_labels):
     plt.annotate(txt,
                  (x1_points[i], x2_points[i]), 
                  textcoords="offset points",
