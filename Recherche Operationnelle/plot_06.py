@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x_1 = np.linspace(0,25, 200)
+x_1 = np.linspace(0,13, 200)
 c_1 = (81 - 3 * x_1) / 9
 c_2 = (55 - 4. * x_1) / 5
 c_3 = 20 - 2 * x_1
@@ -28,8 +28,8 @@ for i, txt in enumerate(x_1_x_2_labels):
                  xytext=(10, 5), 
                  ha='center', zorder=4) 
 
-plt.xlim(0, 25)
-plt.ylim(0, 25)
+plt.xlim(0, 13)
+plt.ylim(0, 13)
 plt.xlabel('$x_1$')
 plt.ylabel('$x_2$')
 plt.legend(loc='upper right', facecolor='#FAFAFA')
