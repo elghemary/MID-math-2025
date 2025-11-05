@@ -1,17 +1,20 @@
 # LP Solver  
-**Recherche Opérationnelle – Project**
+**Projet Recherche Opérationnelle**
 
 A small interactive Python application that solves **Linear Programming (LP)** problems with two variables using the **Simplex / HiGHS** algorithm from SciPy.  
 It provides a clean graphical interface where you can manually enter coefficients and instantly obtain the optimal solution and an optional 2D visualization.
 
-## Project Objective
+## Folder Structure
 
-This project demonstrates how theoretical concepts from **Recherche Opérationnelle** (Operations Research) — such as formulation, constraints, and optimization — can be applied through programming.  
-It allows students to directly experience how the Simplex method works in practice using a computational tool.
+```
+LP_Solver_Project/
+├── app_gui.py           # Main GUI + solver code
+├── requirements.txt     # Library dependencies
+├── README.md            # Documentation
+```
 
 ## Features
 
-- Manual data entry interface (no pre-designed problems)
 - Solves problems of the form  
   **Maximize:** `Z = c1*x1 + c2*x2`  
   **Subject to:** `a1*x1 + a2*x2 ≤ b`
@@ -22,11 +25,8 @@ It allows students to directly experience how the Simplex method works in practi
   - Maximum value `Zmax`
   - Iteration count and solver status
 - Optional **2D plot** of constraints and the optimal point
-- Can be packaged as a **stand-alone executable (.exe)** — runs without Python
 
 ## Installation and Execution
-
-### Run with Python
 
 1. **Open a terminal** and navigate to the project folder:
    ```bash
@@ -51,14 +51,6 @@ It allows students to directly experience how the Simplex method works in practi
    ```
 
 The application window will open automatically.
-
-### Run the Executable (Recommended for Submission)
-
-If you have the compiled version:
-```
-dist/LP_Solver.exe
-```
-Simply double-click the file — no Python installation required.
 
 ## How to Use
 
@@ -89,12 +81,3 @@ Simply double-click the file — no Python installation required.
 - **Matplotlib** – 2D plotting (optional)  
 - **PyInstaller** – packaging into `.exe`  
 
-## 📁 Folder Structure
-
-```
-LP_Solver_Project/
-├── app_gui.py           # Main GUI + solver code
-├── requirements.txt     # Library dependencies
-├── README.md            # Documentation (this file)
-└── dist/LP_Solver.exe   # Executable (if built with PyInstaller)
-```
