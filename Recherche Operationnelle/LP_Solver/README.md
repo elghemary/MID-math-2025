@@ -1,51 +1,160 @@
-# 🧮 Linear Programming Solver (Recherche Opérationnelle Project)
+# 🧮 Linear Programming Solver  
+**Recherche Opérationnelle – Project**
 
-A small interactive Python program that solves **linear programming (LP)** problems with two variables using the **Simplex / HiGHS** algorithm from SciPy.  
-It provides a clean graphical interface where the user can enter all coefficients manually and instantly get the optimal solution and an optional 2D plot.
+A small interactive Python application that solves **Linear Programming (LP)** problems with two variables using the **Simplex / HiGHS** algorithm from SciPy.  
+It provides a clean graphical interface where you can manually enter coefficients and instantly obtain the optimal solution and an optional 2D visualization.
 
 ---
 
-## 🎯 Objective
+## 🎯 Project Objective
 
-The goal of this project is to show how the concepts learned in **Recherche Opérationnelle** — formulation of linear programs, feasible regions, and simplex optimization — can be turned into an actual working computational tool.
-
-This project bridges theory and practice:
-- You input the mathematical model parameters.
-- The program converts them into standard LP form.
-- It solves the optimization problem algorithmically and shows the result.
+This project demonstrates how theoretical concepts from **Recherche Opérationnelle** (Operations Research) — such as formulation, constraints, and optimization — can be applied through programming.  
+It allows students to directly experience how the Simplex method works in practice using a computational tool.
 
 ---
 
 ## 🧩 Features
 
-- **Manual input interface:** enter all coefficients yourself (no predesigned problems)
-- Solve LPs of the form  
-  **Maximize** `Z = c1*x1 + c2*x2`  
-  subject to constraints `a1*x1 + a2*x2 ≤ b`
+- Manual data entry interface (no pre-designed problems)
+- Solves problems of the form  
+  **Maximize:** `Z = c1*x1 + c2*x2`  
+  **Subject to:** `a1*x1 + a2*x2 ≤ b`
 - Supports up to **five constraints**
-- Enforces `x1 ≥ 0`, `x2 ≥ 0`
+- Enforces non-negativity: `x1 ≥ 0`, `x2 ≥ 0`
 - Displays:
-  - Optimal `x1`, `x2`, and `Zmax`
-  - Solver status and iteration count
-- Optional **2D plot** of constraints and optimal point
-- Packaged as a **stand-alone executable (.exe)** — can run without Python
+  - Optimal values of `x1`, `x2`
+  - Maximum value `Zmax`
+  - Iteration count and solver status
+- Optional **2D plot** of constraints and the optimal point
+- Can be packaged as a **stand-alone executable (.exe)** — runs without Python
 
 ---
 
 ## ⚙️ Installation and Execution
 
-### ▶️ Run with Python (for testing or editing)
+### ▶️ Run with Python
 
-1. **Navigate to the project folder:**
+1. **Open a terminal** and navigate to the project folder:
    ```bash
    cd "/path/to/LP_Solver_Project"
-2. **Create a virtual environment and activate it:**
-    python3 -m venv .venv
-    source .venv/bin/activate      # macOS / Linux
-    .venv\Scripts\Activate         # Windows
+   ```
+
+2. **Create and activate a virtual environment:**
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate      # macOS / Linux
+   .venv\Scripts\Activate         # Windows
+   ```
+
 3. **Install required libraries:**
-    pip install numpy scipy matplotlib
-4. **Run the program:**
-    python app_gui.py
+   ```bash
+   pip install numpy scipy matplotlib
+   ```
+
+4. **Run the application:**
+   ```bash
+   python app_gui.py
+   ```
 
 The application window will open automatically.
+
+---
+
+### ▶️ Run the Executable (Recommended for Submission)
+
+If you have the compiled version:
+```
+dist/LP_Solver.exe
+```
+Simply double-click the file — no Python installation required.
+
+---
+
+## 🖥️ How to Use
+
+1. Enter the coefficients **c1** and **c2** of the objective function.  
+2. Fill in each constraint row with coefficients **a1**, **a2**, and the constant **b** for `a1*x1 + a2*x2 ≤ b`.  
+   Leave unused rows blank.  
+3. Click **Solve** to compute the optimal solution.  
+4. Click **Plot (2D)** to visualize the constraints and optimal point.  
+5. Click **Clear** to reset all inputs.
+
+---
+
+## 📊 Example Run
+
+**Problem**
+
+Maximize  
+`Z = 900x1 + 1000x2`  
+subject to:
+```
+11x1 + 9x2 ≤ 9900
+7x1 + 12x2 ≤ 8400
+6x1 + 16x2 ≤ 9600
+x1, x2 ≥ 0
+```
+
+**Result (HiGHS Solver Output)**
+```
+x1 = 360.0
+x2 = 420.0
+Zmax = 780000.0
+Iterations: 2
+Status: Optimal
+```
+
+---
+
+## ⚠️ Limitations
+
+- Only **two decision variables** (`x1`, `x2`) for visualization simplicity  
+- Constraints must be **≤ type**  
+- All variables are **non-negative**  
+- No integer or binary decisions  
+- Does not display the simplex tableau steps  
+- No sensitivity or duality analysis  
+- Large coefficients may lead to numerical warnings  
+- The 2D plot shows constraint lines and the optimum but not the shaded region
+
+---
+
+## 🧠 Learning Outcomes
+
+- Translating LP formulations into computational models  
+- Understanding algorithmic optimization via **Simplex / HiGHS**  
+- Visualizing feasible regions and optimal points  
+- Applying mathematics and programming to decision-making problems  
+
+---
+
+## 🛠️ Technologies Used
+
+- **Python 3.10+**
+- **tkinter** – graphical interface  
+- **SciPy** – `scipy.optimize.linprog` solver  
+- **NumPy** – numerical operations  
+- **Matplotlib** – 2D plotting (optional)  
+- **PyInstaller** – packaging into `.exe`  
+
+---
+
+## 📁 Folder Structure
+
+```
+LP_Solver_Project/
+├── app_gui.py           # Main GUI + solver code
+├── requirements.txt     # Library dependencies
+├── README.md            # Documentation (this file)
+└── dist/LP_Solver.exe   # Executable (if built with PyInstaller)
+```
+
+---
+
+## 🧾 Academic Note
+
+Developed by **Farah El Ghemary**  
+for the *Recherche Opérationnelle* course  
+at **Université Abdelmalek Essaâdi – FST Tanger**
+
+This project demonstrates the transition from **linear programming theory** to a practical, educational optimization tool.
